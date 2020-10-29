@@ -1,26 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button, Header, Icon, Message, Checkbox, Form, Modal, 
+Segment, Menu, Grid, Image, Text } from 'semantic-ui-react';
+import { BrowserRouter, Switch, Route, NavLink, Link } from 'react-router-dom'; 
+import 'semantic-ui-css/semantic.min.css';
+import CSVForm from './CSVForm';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+
+class App extends React.Component {
+	
+	render() {
+		return (
+		<div className="wrapper">
+		<Form>
+		<BrowserRouter>
+		<Button as={Link} to='/CSVForm' size='large' icon='file'>Import CSV degli utenti</Button>
+		<Switch>
+		<Route path="/CSVForm">
+		<CSVForm />
+		</Route>
+		</Switch>
+		</BrowserRouter>
+		</Form>
+		</div>
+		);
+	}
+	
+	
+	
+	}
+
+
+
+
+	
+	
+
+
+
+
+
+
 
 export default App;
